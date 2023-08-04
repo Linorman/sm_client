@@ -163,6 +163,18 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         mainScreenAnimationController: widget.animationController!,
       ),
     );
+    listViews.add(
+      // 创建一个方形按钮来将路由跳转至'/gpt'
+      Container(
+        margin: const EdgeInsets.only(top: 20),
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/gpt');
+          },
+          child: const Text('聊一聊'),
+        ),
+      ),
+    );
   }
 
   Future<bool> getData() async {
